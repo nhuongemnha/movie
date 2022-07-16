@@ -5,12 +5,14 @@ import CarouselReducer from "./reducers/CarouselReducer";
 import QuanLyPhimReducer from "./reducers/QuanLyPhimReducer";
 import QuanLyRapReducer from "./reducers/QuanLyRapReducer";
 import QuanLyNguoiDungReducer from "./reducers/QuanLyNguoiDungReducer";
+import QuanLyDatVeReducer from "./reducers/QuanLyDatVeReducer";
 
 const reducer = combineReducers({
   CarouselReducer,
   QuanLyPhimReducer,
   QuanLyRapReducer,
   QuanLyNguoiDungReducer,
+  QuanLyDatVeReducer,
 });
 
 const store = configureStore({

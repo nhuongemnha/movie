@@ -1,17 +1,17 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Home from "./views/Home";
 import Contact from "./views/Contact";
 import News from "./views/News";
 import Login from "./views/Login";
 import Register from "./views/Register";
 import Detail from "./views/Detail/Detail";
-import Checkout from "./views/Checkout/Checkout";
-import { lazy, Suspense } from "react";
+import Checkout from "./views/Checkout";
+import { lazy, Suspense, useEffect } from "react";
 
 // const CheckoutLazy = lazy(() => import("./views/Checkout/Checkout"));
-function App() {
 
+function App() {
   return (
     <BrowserRouter>
       <Routes>
@@ -20,7 +20,7 @@ function App() {
         <Route exact path="/detail/:id" element={<Detail />} />
         <Route exact path="/news" element={<News />} />
         <Route exact path="/home" element={<Home />} />
-        <Route  exact path="/login" element={<Login />} />
+        <Route exact path="/login" element={<Login />} />
         <Route exact path="/checkout/:id" element={<Checkout />} />
 
         {/* <Route

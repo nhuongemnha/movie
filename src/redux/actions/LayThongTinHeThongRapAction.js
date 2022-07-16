@@ -1,11 +1,11 @@
 import { createAction } from ".";
-import { quanLyRap } from "../../services/QuanLyRap";
+import { quanLyRapService } from "../../services/QuanLyRapService";
 import { actionType } from "./types/QuanLyRapTypes";
 
 export const layThongTinHeThongRapAction = () => {
   return async (dispatch) => {
     try {
-      const res = await quanLyRap.layThongTinHeThongRap();
+      const res = await quanLyRapService.layThongTinHeThongRap();
       dispatch(
         createAction(
           actionType.SET_THONG_TIN_HE_THONG_RAP_CHIEU,

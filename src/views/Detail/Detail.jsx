@@ -59,7 +59,7 @@ const Detail = (props) => {
                     Ngày Chiếu:
                     {moment(filmDetail.ngayKhoiChieu).format("DD/MM/YYYY")}
                   </p>
-                  <p className="text-4xl leading-3">{filmDetail.tenPhim}</p>
+                  <p className="text-4xl">{filmDetail.tenPhim}</p>
                   <p>{filmDetail.moTa}</p>
                 </div>
               </div>

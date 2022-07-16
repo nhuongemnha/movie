@@ -1,6 +1,6 @@
 import { baseService } from "./base";
 
-export class QuanLyNguoiDung extends baseService {
+export class QuanLyNguoiDungService extends baseService {
   constructor(props) {
     super(props);
   }
@@ -10,4 +10,4 @@ export class QuanLyNguoiDung extends baseService {
   };
 }
 
-export const quanLyNguoiDung = new QuanLyNguoiDung();
+export const quanLyNguoiDungService = new QuanLyNguoiDungService();

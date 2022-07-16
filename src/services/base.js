@@ -1,5 +1,5 @@
 import axios from "axios";
-import { DOMAIN, TOKEN, TOKENCYBERSOFT } from "../util/settings/config";
+import { DOMAIN, TOKEN } from "../util/settings/config";
 
 export class baseService {
   //put json về phía backend
@@ -10,7 +10,7 @@ export class baseService {
       data: model,
       headers: {
         Authorization: "Bearer " + localStorage.getItem(TOKEN),
-        TokenCybersoft: TOKENCYBERSOFT,
+        // TokenCybersoft: TOKENCYBERSOFT,
       }, //JWT
     });
   };
@@ -22,7 +22,7 @@ export class baseService {
       data: model,
       headers: {
         Authorization: "Bearer " + localStorage.getItem(TOKEN),
-        TokenCybersoft: TOKENCYBERSOFT,
+        // TokenCybersoft: TOKENCYBERSOFT,
       }, //JWT
     });
   };
@@ -33,7 +33,7 @@ export class baseService {
       method: "GET",
       headers: {
         Authorization: "Bearer " + localStorage.getItem(TOKEN),
-        TokenCybersoft: TOKENCYBERSOFT,
+        // TokenCybersoft: TOKENCYBERSOFT,
       }, //token yêu cầu từ backend chứng minh user đã đăng nhập rồi
     });
   };
@@ -44,7 +44,7 @@ export class baseService {
       method: "DELETE",
       headers: {
         Authorization: "Bearer " + localStorage.getItem(TOKEN),
-        TokenCybersoft: TOKENCYBERSOFT,
+        // TokenCybersoft: TOKENCYBERSOFT,
       }, //token yêu cầu từ backend chứng minh user đã đăng nhập rồi
     });
   };

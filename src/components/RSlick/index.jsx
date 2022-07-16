@@ -53,7 +53,7 @@ const MultipleRowSlick = (props) => {
     slidesToShow: 4,
     speed: 500,
     rows: 1,
-    slidesPerRow: 2,
+    slidesPerRow: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
@@ -70,9 +70,9 @@ const MultipleRowSlick = (props) => {
         PHIM ĐANG CHIẾU
       </button>
       <button
-       onClick={() => {
-        dispatch(createAction(actionType.SET_PHIM_SAP_CHIEU));
-      }}
+        onClick={() => {
+          dispatch(createAction(actionType.SET_PHIM_SAP_CHIEU));
+        }}
         type="button"
         className={`${styleSlick[activeClassSC]} relative px-8 py-4 ml-4 overflow-hidden font-semibold rounded bg-gray-800 text-gray-50`}
       >

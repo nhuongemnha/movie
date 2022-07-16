@@ -1,7 +1,7 @@
 import { GROUPID } from "../util/settings/config";
 import { baseService } from "./base";
 
-export class QuanLyRap extends baseService {
+export class QuanLyRapService extends baseService {
   constructor() {
     super();
   }
@@ -19,4 +19,4 @@ export class QuanLyRap extends baseService {
   }
 }
 
-export const quanLyRap = new QuanLyRap();
+export const quanLyRapService = new QuanLyRapService();
