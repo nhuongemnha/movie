@@ -14,7 +14,7 @@ const reducer = (state = initialState, action) => {
     case actionType.DANG_NHAP: {
       localStorage.setItem(USER_LOGIN, JSON.stringify(action.payload));
       localStorage.setItem(TOKEN, action.payload.accessToken);
-      console.log(action.payload, " action.payload");
+
       return { ...state, UserLogin: action.payload };
     }
     default:

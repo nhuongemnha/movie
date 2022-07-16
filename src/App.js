@@ -10,8 +10,8 @@ import Checkout from "./views/Checkout/Checkout";
 import { lazy, Suspense } from "react";
 
 // const CheckoutLazy = lazy(() => import("./views/Checkout/Checkout"));
-
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>
@@ -20,7 +20,7 @@ function App() {
         <Route exact path="/detail/:id" element={<Detail />} />
         <Route exact path="/news" element={<News />} />
         <Route exact path="/home" element={<Home />} />
-        <Route exact path="/login" element={<Login />} />
+        <Route  exact path="/login" element={<Login />} />
         <Route exact path="/checkout/:id" element={<Checkout />} />
 
         {/* <Route

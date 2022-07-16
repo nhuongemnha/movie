@@ -3,6 +3,8 @@ import UserTemplate from "../../templates/UserTemplate";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { dangNhapAction } from "../../redux/actions/QuanLyNguoiDungAction";
+import { useNavigate } from "react-router-dom";
+
 const Login = () => {
   const formik = useFormik({
     initialValues: {
@@ -10,14 +12,14 @@ const Login = () => {
       matKhau: "",
     },
   });
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const { UserLogin } = useSelector((state) => state.QuanLyNguoiDungReducer);
-  console.log(UserLogin, "userLogin");
+  console.log(UserLogin);
   const handleSubmit = (e) => {
     e.preventDefault();
-    const action = dangNhapAction(formik.values);
+    const action = dangNhapAction(formik.values, navigate);
     dispatch(action);
   };
 
@@ -77,7 +79,6 @@ const Login = () => {
                 viewBox="0 0 448 512"
                 className="w-4 h-4"
               >
-                {/*! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. */}
                 <path
                   fill="currentColor"
                   d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
@@ -88,7 +89,6 @@ const Login = () => {
           <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
             <p className="text-center font-semibold mx-4 mb-0">Or</p>
           </div>
-          {/* Email input */}
           <div className="mb-6">
             <input
               onChange={formik.handleChange}
@@ -99,7 +99,6 @@ const Login = () => {
               placeholder="Email address"
             />
           </div>
-          {/* Password input */}
           <div className="mb-6">
             <input
               onChange={formik.handleChange}
