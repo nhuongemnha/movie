@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect } from "react";
-import Layout from "../../templates/HomeTemplate/HOCs/Layout";
 import { CustomCard } from "@tsamantanis/react-glassmorphism";
 import "@tsamantanis/react-glassmorphism/dist/index.css";
 import "../../assets/styles/circle.css";
@@ -9,6 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
 import { layThongTinLichChieuPhim } from "../../redux/actions/LayThongTinLichChieuPhim";
 import moment from "moment";
+import Layout from "../../templates/HomeTemplate";
+
 
 const Detail = (props) => {
   const { id } = useParams();

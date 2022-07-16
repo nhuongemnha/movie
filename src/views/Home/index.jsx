@@ -1,11 +1,12 @@
 import React, { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import MultipleRowSlick from "../../components/RSlick";
+import Layout from "../../templates/HomeTemplate";
+
 import { layThongTinHeThongRapAction } from "../../redux/actions/LayThongTinHeThongRapAction";
 import { layDanhSachPhim } from "../../redux/actions/QuanLyPhimAction";
 import { layDanhSachHeThongRap } from "../../redux/actions/QuanLyRapActions";
 import HomeCarousel from "../../templates/HomeTemplate/Carousel";
-import Layout from "../../templates/HomeTemplate/HOCs/Layout";
 import HomeMenu from "./HomeMenu/HomeMenu";
 
 const Home = (props) => {

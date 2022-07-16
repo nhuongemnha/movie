@@ -6,6 +6,10 @@ import News from "./views/News";
 import Login from "./views/Login";
 import Register from "./views/Register";
 import Detail from "./views/Detail/Detail";
+import Checkout from "./views/Checkout/Checkout";
+import { lazy, Suspense } from "react";
+
+// const CheckoutLazy = lazy(() => import("./views/Checkout/Checkout"));
 
 function App() {
   return (
@@ -17,6 +21,19 @@ function App() {
         <Route exact path="/news" element={<News />} />
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
+        <Route exact path="/checkout/:id" element={<Checkout />} />
+
+        {/* <Route
+          exact
+          path="/checkout/:id"
+          element={
+            <Suspense
+              fallback={<h1 className="text-2xl text-cyan-700">Loading...</h1>}
+            >
+              <CheckoutLazy />
+            </Suspense>
+          }
+        /> */}
         <Route exact path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>

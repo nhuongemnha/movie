@@ -1,5 +1,6 @@
 import React from "react";
-import Layout from "../../templates/HomeTemplate/HOCs/Layout";
+import Layout from "../../templates/HomeTemplate";
+
 
 const News = () => {
   return <Layout>News</Layout>;
