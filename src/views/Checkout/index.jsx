@@ -88,14 +88,13 @@ const Checkout = () => {
       <div className="min-h-screen">
         <div className="grid grid-cols-12 min-h-screen">
           <div className="col-span-9">
-            <div className="flex flex-col items-center justify-center mt-5">
+            <div className="flex flex-col items-center justify-center">
               <div className="bg-black h-3 w-4/5"></div>
+              
               <div id={`${style["trapezoid"]}`} className="text-center">
                 <h3 className="mt-3 z-10 text-black text-xl">Màn Hình</h3>
               </div>
-              <div>{renderSeats()}</div>
-            </div>
-            <div className="flex justify-center m-auto w-2/3">
+              <div className="flex justify-center m-auto w-3/4">
               <table className="divide-y w-full table-fixed divide-gray-50">
                 <thead className="bg-gray-50 p-5">
                   <tr>
@@ -107,28 +106,28 @@ const Checkout = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-50">
-                  <tr className="bg-white  ">
-                    <td className="text-center px-6">
+                  <tr className="bg-white">
+                    <td className="text-center">
                       <button className="ghe ">
                         <SyncOutlined style={{ display: "block" }} spin />
                       </button>
                     </td>
-                    <td className=" text-center px-6">
+                    <td className=" text-center">
                       <button className="ghe gheDangDat">
                         <SyncOutlined style={{ display: "block" }} spin />
                       </button>
                     </td>
-                    <td className=" text-center px-6">
+                    <td className=" text-center">
                       <button className="ghe gheVip">
                         <SyncOutlined style={{ display: "block" }} spin />
                       </button>
                     </td>
-                    <td className=" text-center px-6">
+                    <td className=" text-center">
                       <button className="ghe gheDaDat">
                         <SyncOutlined style={{ display: "block" }} spin />
                       </button>
                     </td>
-                    <td className=" text-center px-6">
+                    <td className=" text-center">
                       <button className="ghe gheDaDuocDat">
                         <SyncOutlined style={{ display: "block" }} spin />
                       </button>
@@ -137,6 +136,9 @@ const Checkout = () => {
                 </tbody>
               </table>
             </div>
+              <div>{renderSeats()}</div>
+            </div>
+         
           </div>
           <div className="col-span-3 relative">
             <h3 className="text-center text-2xl mt-2 text-green-500">
