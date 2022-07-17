@@ -29,7 +29,6 @@ const Film_Flip = (props) => {
                 style={{ width: 300, height: 300 }}
               />
             </div>
-
             <div
               className="w-full h-full absolute flex justify-center items-center"
               style={{ backgroundColor: "rgba(0,0,0,.5)" }}

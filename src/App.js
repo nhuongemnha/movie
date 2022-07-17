@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./views/Home";
 import Contact from "./views/Contact";
 import News from "./views/News";
@@ -7,9 +7,9 @@ import Login from "./views/Login";
 import Register from "./views/Register";
 import Detail from "./views/Detail/Detail";
 import Checkout from "./views/Checkout";
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense } from "react";
 
-// const CheckoutLazy = lazy(() => import("./views/Checkout/Checkout"));
+// const CheckoutLazy = lazy(() => import("./views/Checkout"));
 
 function App() {
   return (

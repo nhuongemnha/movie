@@ -29,7 +29,7 @@ const HomeCarousel = (props) => {
     });
   };
 
-  return <Carousel effect="fade">{renderBanner()}</Carousel>;
+  return <Carousel autoplay effect="fade">{renderBanner()}</Carousel>;
 };
 
 export default HomeCarousel;

@@ -12,7 +12,18 @@ export const layChiTietPhongVeAction = (maLichChieu) => {
         );
       }
     } catch (err) {
-      console.log("err", err.response?.data);
+      console.log("err", err);
+      
+    }
+  };
+};
+export const datVeAction = (thongTinDatVe) => {
+  return async (dispatch) => {
+    try {
+      const res = await quanLyDatVeService.datVe(thongTinDatVe);
+      console.log(res);
+    } catch (err) {
+      console.log(err.response.data);
     }
   };
 };
