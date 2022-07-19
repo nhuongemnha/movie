@@ -1,5 +1,8 @@
-export const actionType = {
+export const QuanLyDatVeTypes = {
   SET_CHI_TIET_PHONG_VE: "SET_CHI_TIET_PHONG_VE",
   DAT_GHE: "DAT_GHE",
   DAT_VE: "DAT_VE",
+  DAT_VE_HOAN_TAT: "DAT_VE_HOAN_TAT",
+  CHUYEN_TAB: "CHUYEN_TAB",
+  CHUYEN_TAB_ACTIVE: "CHUYEN_TAB_ACTIVE",
 };

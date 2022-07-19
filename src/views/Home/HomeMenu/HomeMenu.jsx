@@ -41,7 +41,7 @@ const HomeMenu = (props) => {
                               alt={film.tenPhim}
                               onError={(e) => {
                                 e.target.onerror = null;
-                                e.target.src = "https://picsum.photos/75/75";
+                                e.target.src = "https://picsum.photos/200/200";
                               }}
                             />
                             <div className="ml-2 ">

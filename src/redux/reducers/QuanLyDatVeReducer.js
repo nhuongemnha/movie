@@ -1,18 +1,20 @@
 import { thongTinLichChieu } from "../../_core/models/ThongTinPhongVe";
-import { actionType } from "../actions/types/QuanLyDatVeType";
+import { QuanLyDatVeTypes } from "../actions/types/QuanLyDatVeType";
 
 const initialState = {
   chiTietPhongVe: new thongTinLichChieu(),
   danhSachGheDangDat: [],
+  tabActive: "1",
+  danhSachGheKhachDat: [{ maGhe: 60201 }, {maGhe:60202}],
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionType.SET_CHI_TIET_PHONG_VE: {
+    case QuanLyDatVeTypes.SET_CHI_TIET_PHONG_VE: {
       state.chiTietPhongVe = action.payload;
       return { ...state };
     }
-    case actionType.DAT_GHE: {
+    case QuanLyDatVeTypes.DAT_GHE: {
       let danhSachGheDangDatUpdate = [...state.danhSachGheDangDat];
       let index = danhSachGheDangDatUpdate.findIndex(
         (gheDangDat) => gheDangDat.tenGhe === action.payload.tenGhe
@@ -23,6 +25,18 @@ const reducer = (state = initialState, action) => {
         danhSachGheDangDatUpdate.push(action.payload);
       }
       state.danhSachGheDangDat = danhSachGheDangDatUpdate;
+      return { ...state };
+    }
+    case QuanLyDatVeTypes.DAT_VE_HOAN_TAT: {
+      state.danhSachGheDangDat = [];
+      return { ...state };
+    }
+    case QuanLyDatVeTypes.CHUYEN_TAB: {
+      state.tabActive = "2";
+      return { ...state };
+    }
+    case QuanLyDatVeTypes.CHUYEN_TAB_ACTIVE: {
+      state.tabActive = action.payload;
       return { ...state };
     }
     default:

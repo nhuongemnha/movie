@@ -1,3 +1,4 @@
 export const actionType = {
   DANG_NHAP: "DANG_NHAP",
+  SET_THONG_TIN_NGUOI_DUNG: "SET_THONG_TIN_NGUOI_DUNG",
 };

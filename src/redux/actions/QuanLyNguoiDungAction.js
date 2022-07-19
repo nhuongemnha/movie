@@ -17,3 +17,17 @@ export const dangNhapAction = (user, navigate) => {
   };
 };
 
+export const layThongTinNguoiDungAction = () => {
+  return async (dispatch) => {
+    try {
+      const res = await quanLyNguoiDungService.layThongTinNguoiDung();
+      if (res.data.statusCode === 200) {
+        dispatch(
+          createAction(actionType.SET_THONG_TIN_NGUOI_DUNG, res.data.content)
+        );
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};

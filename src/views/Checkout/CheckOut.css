@@ -24,9 +24,16 @@
 }
 
 .gheDaDuocDat {
-    background-color: rgb(246, 246, 246)!important;
+    background-color: rgb(246, 246, 246) !important;
     -webkit-box-shadow: -1px 2px 18px -6px #000000;
     box-shadow: -1px 2px 18px -6px #000000;
     color: orange !important;
+    cursor: no-drop;
     border: 1px solid black;
+}
+
+.gheKhachDangDat {
+    background-color: orange !important;
+    cursor: no-drop;
+
 }

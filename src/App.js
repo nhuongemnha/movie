@@ -8,12 +8,14 @@ import Register from "./views/Register";
 import Detail from "./views/Detail/Detail";
 import Checkout from "./views/Checkout";
 import { lazy, Suspense } from "react";
+import Loading from "./components/Loading";
 
 // const CheckoutLazy = lazy(() => import("./views/Checkout"));
 
 function App() {
   return (
     <BrowserRouter>
+      <Loading />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/contact" element={<Contact />} />

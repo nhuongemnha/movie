@@ -1,4 +1,5 @@
 import { TOKEN, USER_LOGIN } from "../../util/settings/config";
+import { ThongTinNguoiDung } from "../../_core/models/ThongTinNguoiDung";
 import { actionType } from "../actions/types/QuanLyNguoiDungType";
 
 let user = {};
@@ -8,6 +9,7 @@ if (localStorage.getItem(USER_LOGIN)) {
 
 const initialState = {
   UserLogin: user,
+  thongTinNguoiDung: new ThongTinNguoiDung(),
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -16,6 +18,11 @@ const reducer = (state = initialState, action) => {
       localStorage.setItem(TOKEN, action.payload.accessToken);
 
       return { ...state, UserLogin: action.payload };
+    }
+
+    case actionType.SET_THONG_TIN_NGUOI_DUNG: {
+      state.thongTinNguoiDung = action.payload;
+      return { ...state };
     }
     default:
       return state;

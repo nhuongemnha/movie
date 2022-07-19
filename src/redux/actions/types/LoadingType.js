@@ -1,0 +1,4 @@
+export const LoadingTypes = {
+  DISPLAY_LOADING: "DISPLAY_LOADING",
+  HIDE_LOADING: "HIDE_LOADING",
+};
