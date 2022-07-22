@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const UserTemplate = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className="h-screen">
       <div className="px-6 h-full text-gray-800">
@@ -9,7 +12,7 @@ const UserTemplate = (props) => {
             <img
               src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
               className="w-full"
-              alt="Sample image"
+              alt="Sample"
             />
           </div>
           {props.children}

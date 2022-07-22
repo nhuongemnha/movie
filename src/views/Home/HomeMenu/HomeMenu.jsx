@@ -11,7 +11,7 @@ const HomeMenu = (props) => {
       return (
         <TabPane
           tab={
-            <img className="rounded-full w-12" src={heThongRap.logo} alt="" />
+            <img className="w-12 rounded-full" src={heThongRap.logo} alt="" />
           }
           key={index}
         >
@@ -21,8 +21,8 @@ const HomeMenu = (props) => {
                 <TabPane
                   tab={
                     <div className="flex">
-                      <img className="w-12" src={cumRap.hinhAnh} />
-                      <div className="text-left ml-2">
+                      <img className="w-12" src={cumRap.hinhAnh} alt='' />
+                      <div className="ml-2 text-left">
                         {cumRap.tenCumRap}
                         <p className="text-red-500">Chi Tiết</p>
                       </div>
@@ -45,7 +45,7 @@ const HomeMenu = (props) => {
                               }}
                             />
                             <div className="ml-2 ">
-                              <h1 className="text-xl text-blue-400 font-bold">
+                              <h1 className="text-xl font-bold text-blue-400">
                                 {film.tenPhim}
                               </h1>
                               <p>{cumRap.diaChi}</p>
@@ -54,7 +54,7 @@ const HomeMenu = (props) => {
                                   .slice(0, 12)
                                   .map((lichChieu, index) => {
                                     return (
-                                      <NavLink key={index} to="">
+                                      <NavLink key={index} to={`/checkout/${lichChieu.maLichChieu}`}>
                                         {moment(
                                           lichChieu.ngayChieuGioChieu
                                         ).format("hh:mm A")}

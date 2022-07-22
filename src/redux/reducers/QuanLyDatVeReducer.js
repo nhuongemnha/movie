@@ -5,7 +5,7 @@ const initialState = {
   chiTietPhongVe: new thongTinLichChieu(),
   danhSachGheDangDat: [],
   tabActive: "1",
-  danhSachGheKhachDat: [{ maGhe: 60201 }, {maGhe:60202}],
+  danhSachGheKhachDat: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -39,6 +39,12 @@ const reducer = (state = initialState, action) => {
       state.tabActive = action.payload;
       return { ...state };
     }
+
+    case QuanLyDatVeTypes.DAT_GHE_REALTIME: {
+      state.danhSachGheKhachDat = action.payload;
+      return { ...state };
+    }
+
     default:
       return state;
   }

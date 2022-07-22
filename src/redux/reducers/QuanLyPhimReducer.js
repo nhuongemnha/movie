@@ -5,6 +5,7 @@ const initialState = {
   dangChieu: true,
   sapChieu: true,
   arrFilmDefault: [],
+  thongTinPhim: {},
 };
 
 const reducer = (state = initialState, action) => {
@@ -26,6 +27,10 @@ const reducer = (state = initialState, action) => {
       state.arrFilm = state.arrFilmDefault.filter(
         (item) => item.sapChieu === state.sapChieu
       );
+      return { ...state };
+    }
+    case actionType.SET_THONG_TIN_PHIM: {
+      state.thongTinPhim = action.payload;
       return { ...state };
     }
     default:

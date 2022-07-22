@@ -3,7 +3,7 @@ import UserTemplate from "../../templates/UserTemplate";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { dangNhapAction } from "../../redux/actions/QuanLyNguoiDungAction";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import { TOKEN } from "../../util/settings/config";
 
 const Login = () => {
@@ -137,12 +137,12 @@ const Login = () => {
             </button>
             <p className="text-sm font-semibold mt-2 pt-1 mb-0">
               Don't have an account?
-              <a
-                href="#!"
+              <NavLink
+                to='/register'
                 className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
               >
                 Register
-              </a>
+              </NavLink>
             </p>
           </div>
         </form>
