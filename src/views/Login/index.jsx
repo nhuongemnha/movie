@@ -5,6 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { dangNhapAction } from "../../redux/actions/QuanLyNguoiDungAction";
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import { TOKEN } from "../../util/settings/config";
+import * as yup from "yup";
+
+const schema = yup.object().shape({
+  taiKhoan: yup.string().required("User is required"),
+  matKhau: yup.string().required("Password is required"),
+});
 
 const Login = () => {
   const formik = useFormik({
@@ -12,6 +18,8 @@ const Login = () => {
       taiKhoan: "",
       matKhau: "",
     },
+    validationSchema: schema,
+    validateOnMount: true,
   });
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -19,6 +27,12 @@ const Login = () => {
   console.log(UserLogin);
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    formik.setTouched({
+      taiKhoan: true,
+      matKhau: true,
+    });
+    if (!formik.isValid) return;
     const action = dangNhapAction(formik.values, navigate);
     dispatch(action);
   };
@@ -91,24 +105,50 @@ const Login = () => {
             <p className="text-center font-semibold mx-4 mb-0">Or</p>
           </div>
           <div className="mb-6">
-            <input
-              onChange={formik.handleChange}
-              name="taiKhoan"
-              type="text"
-              className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              id="exampleFormControlInput2"
-              placeholder="Email address"
-            />
+            {formik.touched.taiKhoan && formik.errors.taiKhoan ? (
+              <input
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                name="taiKhoan"
+                type="text"
+                className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-red-500 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                id="exampleFormControlInput2"
+                placeholder={`${formik.errors.taiKhoan}`}
+              />
+            ) : (
+              <input
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                name="taiKhoan"
+                type="text"
+                className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                id="exampleFormControlInput2"
+                placeholder="Email address"
+              />
+            )}
           </div>
           <div className="mb-6">
-            <input
-              onChange={formik.handleChange}
-              name="matKhau"
-              type="password"
-              className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              id="exampleFormControlInput2"
-              placeholder="Password"
-            />
+            {formik.touched.matKhau && formik.errors.matKhau ? (
+              <input
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                name="matKhau"
+                type="password"
+                className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-red-500 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                id="exampleFormControlInput2"
+                placeholder={`${formik.errors.matKhau}`}
+              />
+            ) : (
+              <input
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                name="matKhau"
+                type="password"
+                className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                id="exampleFormControlInput2"
+                placeholder="Password"
+              />
+            )}
           </div>
           <div className="flex justify-between items-center mb-6">
             <div className="form-group form-check">
@@ -138,7 +178,7 @@ const Login = () => {
             <p className="text-sm font-semibold mt-2 pt-1 mb-0">
               Don't have an account?
               <NavLink
-                to='/register'
+                to="/register"
                 className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
               >
                 Register

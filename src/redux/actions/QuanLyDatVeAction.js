@@ -39,7 +39,7 @@ export const datVeAction = (thongTinDatVe) => {
       await dispatch(layThongTinNguoiDungAction());
     } catch (err) {
       dispatch(createAction(hideLoadingAction));
-      console.log(err.response.data);
+      console.log(err.response?.data);
     }
   };
 };

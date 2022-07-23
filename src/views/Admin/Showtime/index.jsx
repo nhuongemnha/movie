@@ -1,22 +1,12 @@
-import {
-  Button,
-  Cascader,
-  Checkbox,
-  Form,
-  Input,
-  InputNumber,
-  Select,
-} from "antd";
+import { Button, Form, InputNumber, Select } from "antd";
 import React, { useCallback, useEffect, useState } from "react";
 import AdminTemplate from "../../../templates/AdminTemplate";
-import { DatePicker, Space } from "antd";
+import { DatePicker } from "antd";
 import { quanLyRapService } from "../../../services/QuanLyRapService";
 import { useFormik } from "formik";
 import { useParams } from "react-router-dom";
 import moment from "moment";
-import { useDispatch } from "react-redux";
 import { quanLyDatVeService } from "../../../services/QuanLyDatVeService";
-const { RangePicker } = DatePicker;
 
 const Showtime = (props) => {
   const { id, tenPhim } = useParams();
