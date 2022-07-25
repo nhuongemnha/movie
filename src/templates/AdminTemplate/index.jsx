@@ -6,19 +6,27 @@ import {
 } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu } from "antd";
 import _ from "lodash";
-import React, { Fragment, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import React, { Fragment, useCallback, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import { TOKEN, USER_LOGIN } from "../../util/settings/config";
 import "./index.css";
+import { layDanhSachNguoiDung } from "../../redux/actions/QuanLyNguoiDungAction";
 
 const AdminTemplate = (props) => {
   const { UserLogin } = useSelector((state) => state.QuanLyNguoiDungReducer);
   const [collapsed, setCollapsed] = useState(false);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   useEffect(() => {
     window.scrollTo(0, 0);
   });
+  const actions = useCallback(() => {
+    dispatch(layDanhSachNguoiDung());
+  });
+  useEffect(() => {
+    actions();
+  }, []);
 
   const { Header, Content, Footer, Sider } = Layout;
 
@@ -37,7 +45,23 @@ const AdminTemplate = (props) => {
       "1",
       <NavLink className="thea" to="/admin">
         <UserOutlined />
-      </NavLink>
+      </NavLink>,
+      [
+        getItem(
+          "Users",
+          "14",
+          <NavLink className="thea" to="/admin">
+            <FileOutlined />
+          </NavLink>
+        ),
+        getItem(
+          "Add New",
+          "19",
+          <NavLink className="thea" to="/admin/adduser">
+            <FileOutlined />
+          </NavLink>
+        ),
+      ]
     ),
     getItem(
       "Films",
@@ -50,24 +74,17 @@ const AdminTemplate = (props) => {
           "Films",
           "10",
           <NavLink className="thea" to="/admin/films">
-           <FileOutlined />
+            <FileOutlined />
           </NavLink>
         ),
         getItem(
           "Add New",
           "11",
           <NavLink className="thea" to="/admin/films/addnew">
-           <FileOutlined />
+            <FileOutlined />
           </NavLink>
         ),
       ]
-    ),
-    getItem(
-      "Showtime",
-      "3",
-      <NavLink className="thea" to="/admin/showtimes">
-        <DesktopOutlined />
-      </NavLink>
     ),
   ];
 

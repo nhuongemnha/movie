@@ -40,6 +40,17 @@ const Login = () => {
     return <Navigate to="/" />;
   }
 
+  const handleSetDefaultAdmin = () => {
+    const defaultAdmin = {
+      taiKhoan: "admin",
+      matKhau: "admin",
+    };
+    formik.setValues({
+      taiKhoan: defaultAdmin.taiKhoan,
+      matKhau: defaultAdmin.matKhau,
+    });
+  };
+
   return (
     <UserTemplate>
       <div className="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
@@ -50,7 +61,7 @@ const Login = () => {
               type="button"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
-              className="inline-block p-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+              className="inline-block p-3 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
             >
               {/* Facebook */}
               <svg
@@ -68,7 +79,7 @@ const Login = () => {
               type="button"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
-              className="inline-block p-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+              className="inline-block p-3 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
             >
               {/* Twitter */}
               <svg
@@ -86,7 +97,7 @@ const Login = () => {
               type="button"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
-              className="inline-block p-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+              className="inline-block p-3 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
             >
               {/* Linkedin */}
               <svg
@@ -107,6 +118,7 @@ const Login = () => {
           <div className="mb-6">
             {formik.touched.taiKhoan && formik.errors.taiKhoan ? (
               <input
+                value={formik.values.taiKhoan}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 name="taiKhoan"
@@ -117,6 +129,7 @@ const Login = () => {
               />
             ) : (
               <input
+                value={formik.values.taiKhoan}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 name="taiKhoan"
@@ -130,6 +143,7 @@ const Login = () => {
           <div className="mb-6">
             {formik.touched.matKhau && formik.errors.matKhau ? (
               <input
+                value={formik.values.matKhau}
                 onBlur={formik.handleBlur}
                 onChange={formik.handleChange}
                 name="matKhau"
@@ -140,6 +154,7 @@ const Login = () => {
               />
             ) : (
               <input
+                value={formik.values.matKhau}
                 onBlur={formik.handleBlur}
                 onChange={formik.handleChange}
                 name="matKhau"
@@ -154,7 +169,7 @@ const Login = () => {
             <div className="form-group form-check">
               <input
                 type="checkbox"
-                className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-red-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                 id="exampleCheck2"
               />
               <label
@@ -171,10 +186,18 @@ const Login = () => {
           <div className="text-center lg:text-left">
             <button
               type="submit"
-              className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+              className="inline-block px-7 py-3 bg-red-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
             >
               Login
             </button>
+            <button
+              type="button"
+              onClick={handleSetDefaultAdmin}
+              className="inline-block ml-3 px-7 py-3 bg-red-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            >
+              Set Default Admin
+            </button>
+
             <p className="text-sm font-semibold mt-2 pt-1 mb-0">
               Don't have an account?
               <NavLink

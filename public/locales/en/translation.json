@@ -1,4 +1,14 @@
 {
   "signin": "Sign In",
-  "signup": "Sign Up"
+  "signup": "Sign Up",
+  "home": "Home",
+  "contact": "Contact",
+  "news": "News",
+  "contact us": "CONTACT US",
+  "get in touch": "GET IN TOUCH",
+  "address": "Address",
+  "phone": "Phone",
+  "message": "Message",
+  "name": "Name",
+  "send": "Send"
 }

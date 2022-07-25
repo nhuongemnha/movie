@@ -1,26 +1,15 @@
-import {
-  Button,
-  Cascader,
-  DatePicker,
-  Form,
-  Input,
-  InputNumber,
-  Radio,
-  Select,
-  Switch,
-  TreeSelect,
-} from "antd";
-import { Formik, useFormik } from "formik";
-import { min } from "lodash";
+import { DatePicker, Form, Input, InputNumber, Switch } from "antd";
+import { useFormik } from "formik";
 import moment from "moment";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { themPhimUpLoadHinhAction } from "../../../../redux/actions/QuanLyPhimAction";
 import AdminTemplate from "../../../../templates/AdminTemplate";
 import { GROUPID } from "../../../../util/settings/config";
-import { ThongTinPhim } from "../../../../_core/models/ThongTinPhongVe";
 
 const AddNew = (props) => {
+  const navigate = useNavigate();
   const [imgSrc, setImgSrc] = useState("");
   const [componentSize, setComponentSize] = useState("default");
   const dispatch = useDispatch();
@@ -48,7 +37,7 @@ const AddNew = (props) => {
         }
       }
 
-      dispatch(themPhimUpLoadHinhAction(formData));
+      dispatch(themPhimUpLoadHinhAction(formData,navigate));
     },
   });
   const onFormLayoutChange = ({ size }) => {

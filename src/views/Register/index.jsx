@@ -32,7 +32,7 @@ const Register = () => {
       matKhau: "",
       email: "",
       soDT: "",
-      maNhom: "GP01",
+      maNhom: "",
       hoTen: "",
     },
     validationSchema: schema,
@@ -194,15 +194,26 @@ const Register = () => {
               <Option value="GP02">GP02</Option>
               <Option value="GP03">GP03</Option>
               <Option value="GP04">GP04</Option>
+              <Option value="GP04">GP05</Option>
+              <Option value="GP04">GP06</Option>
+              <Option value="GP04">GP07</Option>
+              <Option value="GP04">GP08</Option>
+              <Option value="GP04">GP09</Option>
+              <Option value="GP04">GP10</Option>
+              <Option value="GP04">GP11</Option>
+              <Option value="GP04">GP12</Option>
+              <Option value="GP04">GP13</Option>
+              <Option value="GP04">GP14</Option>
+              <Option value="GP04">GP15</Option>
             </Select>
           </div>
           <div className="flex justify-between items-center mb-6">
             <div>
               <button
                 type="submit"
-                className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                className="inline-block px-7 py-3 bg-red-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
               >
-                Login
+                Sign Up
               </button>
             </div>
             <NavLink to="/login" className="text-gray-800">

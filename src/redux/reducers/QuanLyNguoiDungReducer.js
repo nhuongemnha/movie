@@ -10,6 +10,7 @@ if (localStorage.getItem(USER_LOGIN)) {
 const initialState = {
   UserLogin: user,
   thongTinNguoiDung: new ThongTinNguoiDung(),
+  arrUserDefault: [],
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -22,6 +23,10 @@ const reducer = (state = initialState, action) => {
 
     case actionType.SET_THONG_TIN_NGUOI_DUNG: {
       state.thongTinNguoiDung = action.payload;
+      return { ...state };
+    }
+    case actionType.SET_DANH_SACH_NGUOI_DUNG: {
+      state.arrUserDefault = action.payload;
       return { ...state };
     }
     default:

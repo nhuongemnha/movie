@@ -1,10 +1,11 @@
 import React, { Fragment } from "react";
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Select } from "antd";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import _ from "lodash";
 import { TOKEN, USER_LOGIN } from "../../../util/settings/config";
+import { Dropdown, Menu, Space } from "antd";
 
 const HomeHeader = () => {
   const { Option } = Select;
@@ -15,6 +16,20 @@ const HomeHeader = () => {
   const handleChange = (value) => {
     i18n.changeLanguage(value);
   };
+  const menu = (
+    <Menu
+      items={[
+        {
+          label: <NavLink to="/profile">Profile</NavLink>,
+          key: "0",
+        },
+        {
+          label: <NavLink to="/admin">AdminPage</NavLink>,
+          key: "1",
+        },
+      ]}
+    />
+  );
 
   const renderLogin = () => {
     if (_.isEmpty(UserLogin)) {
@@ -51,13 +66,12 @@ const HomeHeader = () => {
     }
     return (
       <Fragment>
-        <button
-          onClick={() => {
-            navigate("/profile");
-          }}
-        >
-          Hello,{UserLogin.taiKhoan}
-        </button>
+        <Dropdown className="pl-4" overlay={menu}>
+          <button onClick={(e) => e.preventDefault()}>
+            <Space>Hello,{UserLogin.taiKhoan}</Space>
+          </button>
+        </Dropdown>
+
         <button
           className="block ml-5 self-center px-8 py-3 font-semibold bg-red-600 rounded text-gray-50"
           onClick={() => {
@@ -67,7 +81,7 @@ const HomeHeader = () => {
             window.location.reload();
           }}
         >
-          Đăng Xuất{" "}
+          Đăng Xuất
         </button>
       </Fragment>
     );
@@ -98,7 +112,7 @@ const HomeHeader = () => {
                   : "flex items-center px-4 -mb-1  no-underline text-white hover:border-b-2 "
               }
             >
-              Home
+              {t("home")}
             </NavLink>
           </li>
           <li className="flex">
@@ -110,7 +124,7 @@ const HomeHeader = () => {
                   : "flex items-center px-4 -mb-1  no-underline text-white hover:border-b-2 "
               }
             >
-              Contact
+              {t("contact")}
             </NavLink>
           </li>
           <li className="flex">
@@ -122,7 +136,7 @@ const HomeHeader = () => {
                   : "flex items-center px-4 -mb-1  no-underline text-white hover:border-b-2 "
               }
             >
-              News
+              {t("news")}
             </NavLink>
           </li>
         </ul>

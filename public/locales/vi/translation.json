@@ -1,4 +1,14 @@
 {
   "signin": "Đăng Nhập",
-  "signup": "Đăng Ký"
+  "signup": "Đăng Ký",
+  "home": "Trang Chủ",
+  "contact": "Liên Hệ",
+  "news": "Tin Tức",
+  "contact us": "Kết Nối Với Chúng Tôi",
+  "get in touch": "LIÊN LẠC",
+  "address": "Địa Chỉ",
+  "phone": "Số Điện Thoại",
+  "message": "Tin Nhắn",
+  "name": "Tên",
+  "send": "Gửi"
 }

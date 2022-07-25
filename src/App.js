@@ -15,6 +15,8 @@ import Showtime from "./views/Admin/Showtime";
 import Films from "./views/Admin/Films";
 import AddNew from "./views/Admin/Films/AddNew";
 import Edit from "./views/Admin/Films/Edit";
+import AddUser from "./views/Admin/Dashboard/AddUser";
+import EditUser from "./views/Admin/Dashboard/EditUser";
 
 // const CheckoutLazy = lazy(() => import("./views/Checkout"));
 
@@ -33,10 +35,17 @@ function App() {
         <Route exact path="/profile" element={<Profile />} />
 
         <Route exact path="/admin" element={<Dashboard />} />
+        <Route exact path="/admin/adduser" element={<AddUser />} />
+        <Route exact path="/admin/edituser/:taiKhoan" element={<EditUser />} />
+
         <Route exact path="/admin/films" element={<Films />} />
         <Route exact path="/admin/films/addnew" element={<AddNew />} />
         <Route exact path="/admin/films/edit/:id" element={<Edit />} />
-        <Route exact path="/admin/films/showtime/:id/:tenPhim" element={<Showtime />} />
+        <Route
+          exact
+          path="/admin/films/showtime/:id/:tenPhim"
+          element={<Showtime />}
+        />
 
         <Route exact path="/admin/users" element={<Dashboard />} />
 

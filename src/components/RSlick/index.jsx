@@ -51,6 +51,7 @@ const MultipleRowSlick = (props) => {
     infinite: true,
     centerPadding: "60px",
     slidesToShow: 4,
+    autoplay: true,
     speed: 500,
     rows: 1,
     slidesPerRow: 2,

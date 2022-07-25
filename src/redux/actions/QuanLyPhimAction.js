@@ -13,14 +13,15 @@ export const layDanhSachPhim = (tenPhim = "") => {
   };
 };
 
-export const themPhimUpLoadHinhAction = (formData) => {
+export const themPhimUpLoadHinhAction = (formData, navigate) => {
   return async (dispatch) => {
     try {
       let res = await quanLyPhimService.themPhimUpLoadHinh(formData);
       alert("Thêm phim thành công!");
       console.log("res", res.data.content);
+      navigate("/admin/films");
     } catch (errors) {
-      console.log(errors.response?.data);
+      console.log(errors.response.data.content);
     }
   };
 };
@@ -33,7 +34,7 @@ export const capNhatPhimUpLoad = (formData, navigate) => {
       console.log("res", res.data.content);
       navigate("/admin/films");
     } catch (errors) {
-      console.log(errors.response?.data);
+      alert(errors.response.data.content);
     }
   };
 };
@@ -44,7 +45,7 @@ export const layThongTinPhimAction = (maPhim) => {
       let res = await quanLyPhimService.layThongTinPhim(maPhim);
       dispatch(createAction(actionType.SET_THONG_TIN_PHIM, res.data.content));
     } catch (errors) {
-      console.log(errors.response?.data);
+      console.log(errors.response.data.content);
     }
   };
 };
@@ -56,7 +57,7 @@ export const xoaPhimAction = (maPhim) => {
       alert("Xóa Phim Thành Công!!!");
       dispatch(layDanhSachPhim());
     } catch (errors) {
-      console.log(errors.response?.data);
+      console.log(errors.response.data.content);
     }
   };
 };
