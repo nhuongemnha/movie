@@ -44,9 +44,7 @@ const MovieList = () => {
                       {item.tenPhim}
                     </h2>
                     <p className="leading-relaxed">{item.moTa}</p>
-                    <button className="text-2xl">
-                          <YoutubeFilled />
-                    </button>
+
                     <NavLink
                       to={`/detail/${item.maPhim}`}
                       className="text-indigo-500 inline-flex items-center mt-4"
