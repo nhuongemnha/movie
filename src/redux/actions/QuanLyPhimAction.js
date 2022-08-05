@@ -61,3 +61,17 @@ export const xoaPhimAction = (maPhim) => {
     }
   };
 };
+
+export const layDanhSachPhimPhanTrang = (currentPage, count) => {
+  return async (dispatch) => {
+    try {
+      let res = await quanLyPhimService.LayDanhSachPhimPhanTrang(
+        currentPage,
+        count
+      );
+      dispatch(createAction(actionType.SET_PAGINATION_PHIM, res.data.content));
+    } catch (errors) {
+      console.log(errors.response.data.content);
+    }
+  };
+};

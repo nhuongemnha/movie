@@ -6,6 +6,7 @@ const initialState = {
   sapChieu: true,
   arrFilmDefault: [],
   thongTinPhim: {},
+  moviePagination:{}
 };
 
 const reducer = (state = initialState, action) => {
@@ -31,6 +32,10 @@ const reducer = (state = initialState, action) => {
     }
     case actionType.SET_THONG_TIN_PHIM: {
       state.thongTinPhim = action.payload;
+      return { ...state };
+    }
+    case actionType.SET_PAGINATION_PHIM: {
+      state.moviePagination = action.payload;
       return { ...state };
     }
     default:

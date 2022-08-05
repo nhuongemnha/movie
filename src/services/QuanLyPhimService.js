@@ -17,6 +17,11 @@ export class QuanLyPhimService extends baseService {
     }
     return this.get(`/api/QuanLyPhim/LayDanhSachPhim?maNhom=${GROUPID}`);
   };
+  LayDanhSachPhimPhanTrang = (currentPage, count) => {
+    return this.get(
+      `/api/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=${GROUPID}&soTrang=${currentPage}&soPhanTuTrenTrang=${count}`
+    );
+  };
 
   themPhimUpLoadHinh = (formData) => {
     return this.post(`/api/QuanLyPhim/ThemPhimUploadHinh`, formData);

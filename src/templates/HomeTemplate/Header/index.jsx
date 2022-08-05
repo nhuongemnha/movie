@@ -117,6 +117,18 @@ const HomeHeader = () => {
           </li>
           <li className="flex">
             <NavLink
+              to="/movie"
+              className={({ isActive }) =>
+                isActive
+                  ? "flex items-center px-4 -mb-1 border-b-2  no-underline text-white "
+                  : "flex items-center px-4 -mb-1  no-underline text-white hover:border-b-2 "
+              }
+            >
+              {t("Movie")}
+            </NavLink>
+          </li>
+          <li className="flex">
+            <NavLink
               to="/contact"
               className={({ isActive }) =>
                 isActive

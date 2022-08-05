@@ -17,6 +17,7 @@ import AddNew from "./views/Admin/Films/AddNew";
 import Edit from "./views/Admin/Films/Edit";
 import AddUser from "./views/Admin/Dashboard/AddUser";
 import EditUser from "./views/Admin/Dashboard/EditUser";
+import MovieList from "./views/MovieList";
 
 // const CheckoutLazy = lazy(() => import("./views/Checkout"));
 
@@ -25,34 +26,34 @@ function App() {
     <BrowserRouter>
       <Loading />
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/contact" element={<Contact />} />
-        <Route exact path="/detail/:id" element={<Detail />} />
-        <Route exact path="/news" element={<News />} />
-        <Route exact path="/home" element={<Home />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/register" element={<Register />} />
-        <Route exact path="/profile" element={<Profile />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/movie" element={<MovieList />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/profile" element={<Profile />} />
 
-        <Route exact path="/admin" element={<Dashboard />} />
-        <Route exact path="/admin/adduser" element={<AddUser />} />
-        <Route exact path="/admin/edituser/:taiKhoan" element={<EditUser />} />
+        <Route path="/admin" element={<Dashboard />} />
+        <Route path="/admin/adduser" element={<AddUser />} />
+        <Route path="/admin/edituser/:taiKhoan" element={<EditUser />} />
 
-        <Route exact path="/admin/films" element={<Films />} />
-        <Route exact path="/admin/films/addnew" element={<AddNew />} />
-        <Route exact path="/admin/films/edit/:id" element={<Edit />} />
+        <Route path="/admin/films" element={<Films />} />
+        <Route path="/admin/films/addnew" element={<AddNew />} />
+        <Route path="/admin/films/edit/:id" element={<Edit />} />
         <Route
-          exact
           path="/admin/films/showtime/:id/:tenPhim"
           element={<Showtime />}
         />
 
-        <Route exact path="/admin/users" element={<Dashboard />} />
+        <Route path="/admin/users" element={<Dashboard />} />
 
-        <Route exact path="/checkout/:id" element={<Checkout />} />
+        <Route path="/checkout/:id" element={<Checkout />} />
 
         {/* <Route
-          exact
+          
           path="/checkout/:id"
           element={
             <Suspense
@@ -62,7 +63,7 @@ function App() {
             </Suspense>
           }
         /> */}
-        <Route exact path="/register" element={<Register />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );
