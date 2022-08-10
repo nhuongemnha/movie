@@ -12,7 +12,7 @@ const Footer = (props) => {
     _.pick(heThongRap, ["maHeThongRap", "tenHeThongRap", "logo"])
   );
   return (
-    <footer className="px-4 divide-y bg-gray-500 text-gray-800">
+    <footer className="px-4 divide-y bg-gray-100 text-gray-800">
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3">
           <a
@@ -21,31 +21,76 @@ const Footer = (props) => {
             className="flex justify-center space-x-3 lg:justify-start"
           >
             <img
-              className="w-32"
               src="https://xemphim.vip/static/skin/logo-full.png"
-              alt="xemphim.club"
+              className="w-32 "
+              alt=""
             />
           </a>
         </div>
-        <div className="grid text-sm gap-x-3 gap-y-8 lg:w-2/3 grid-cols-2">
+        <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
           <div className="space-y-3">
-            <h3 className="tracking-wide uppercase text-gray-900 text-center">
-              PARTNER
-            </h3>
-            <ul className="space-y-1 grid grid-cols-3 gap-2 ">
-              {arrHeThongRap.map((item, index) => {
-                return (
-                  <li key={index}>
-                    <img className="w-12 mx-auto " src={item.logo} alt="" />
-                  </li>
-                );
-              })}
+            <h3 className="tracking-wide uppercase text-gray-900">Product</h3>
+            <ul className="space-y-1">
+              <li>
+                <a rel="noopener noreferrer" href="#">
+                  Features
+                </a>
+              </li>
+              <li>
+                <a rel="noopener noreferrer" href="#">
+                  Integrations
+                </a>
+              </li>
+              <li>
+                <a rel="noopener noreferrer" href="#">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a rel="noopener noreferrer" href="#">
+                  FAQ
+                </a>
+              </li>
             </ul>
           </div>
-
-          <div className="space-y-3 ">
-            <div className="uppercase text-center text-gray-900">Social media</div>
-            <div className="flex justify-center space-x-3">
+          <div className="space-y-3">
+            <h3 className="tracking-wide uppercase text-gray-900">Company</h3>
+            <ul className="space-y-1">
+              <li>
+                <a rel="noopener noreferrer" href="#">
+                  Privacy
+                </a>
+              </li>
+              <li>
+                <a rel="noopener noreferrer" href="#">
+                  Terms of Service
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="space-y-3">
+            <h3 className="uppercase text-gray-900">Developers</h3>
+            <ul className="space-y-1">
+              <li>
+                <a rel="noopener noreferrer" href="#">
+                  Public API
+                </a>
+              </li>
+              <li>
+                <a rel="noopener noreferrer" href="#">
+                  Documentation
+                </a>
+              </li>
+              <li>
+                <a rel="noopener noreferrer" href="#">
+                  Guides
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="space-y-3">
+            <div className="uppercase text-gray-900">Social media</div>
+            <div className="flex justify-start space-x-3">
               <a
                 rel="noopener noreferrer"
                 href="#"

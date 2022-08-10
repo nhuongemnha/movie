@@ -88,7 +88,7 @@ const HomeHeader = () => {
   };
 
   return (
-    <header className="fixed z-10 w-full p-4 text-white bg-black bg-opacity-40">
+    <header className="fixed z-10 w-full p-4 text-white bg-black bg-opacity-70">
       <div className="container flex justify-between h-16 mx-auto">
         <NavLink
           rel="noopener noreferrer"
@@ -103,18 +103,7 @@ const HomeHeader = () => {
           />
         </NavLink>
         <ul className="items-stretch hidden space-x-3 lg:flex">
-          <li className="flex">
-            <NavLink
-              to="/home"
-              className={({ isActive }) =>
-                isActive
-                  ? "flex items-center px-4 -mb-1 border-b-2  no-underline text-white "
-                  : "flex items-center px-4 -mb-1  no-underline text-white hover:border-b-2 "
-              }
-            >
-              {t("home")}
-            </NavLink>
-          </li>
+         
           <li className="flex">
             <NavLink
               to="/movie"

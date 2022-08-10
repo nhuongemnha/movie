@@ -1,5 +1,4 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import logger from "redux-logger";
 import thunk from "redux-thunk";
 import CarouselReducer from "./reducers/CarouselReducer";
 import QuanLyPhimReducer from "./reducers/QuanLyPhimReducer";
@@ -19,7 +18,7 @@ const reducer = combineReducers({
 
 const store = configureStore({
   reducer,
-  middleware: [thunk, logger],
+  middleware: [thunk],
 });
 
 export default store;

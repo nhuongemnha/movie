@@ -14,6 +14,7 @@ const MovieList = () => {
     dispatch(layDanhSachPhimPhanTrang(currentPage, count));
   }, [currentPage, dispatch]);
   useEffect(() => {
+    window.scrollTo(0, 0);
     actions();
   }, [actions]);
   const handleChangePage = (value) => {
