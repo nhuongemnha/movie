@@ -42,8 +42,12 @@ const HomeHeader = () => {
             }}
             onChange={handleChange}
           >
-            <Option value="en">🇬🇧 English</Option>
-            <Option value="vi">🇻🇳 Tiếng Việt</Option>
+            <Option
+              value="en"> English</Option>
+            <Option
+              value="vi">
+              Tiếng Việt
+            </Option>
           </Select>
           <button
             onClick={() => {
@@ -98,12 +102,12 @@ const HomeHeader = () => {
         >
           <img
             className="w-32"
-            src="https://xemphim.vip/static/skin/logo-full.png"
+            src="/assets/img/logo-header.png"
             alt="xemphim.club"
           />
         </NavLink>
         <ul className="items-stretch hidden space-x-3 lg:flex">
-         
+
           <li className="flex">
             <NavLink
               to="/movie"

@@ -21,7 +21,7 @@ const Footer = (props) => {
             className="flex justify-center space-x-3 lg:justify-start"
           >
             <img
-              src="https://xemphim.vip/static/skin/logo-full.png"
+              src="/assets/img/logo-header.png"
               className="w-32 "
               alt=""
             />
